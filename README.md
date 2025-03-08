@@ -19,6 +19,8 @@ Technical Details
 ID3v1 uses 128 bytes for metadata storage.
 ID3v2 consists of a header and multiple frames, each holding a piece of metadata.
 The tool reads common ID3v2 fields such as:
+
+
 TIT2 → Title
 TALB → Album
 TPE1 → Artist
