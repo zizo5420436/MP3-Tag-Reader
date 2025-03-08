@@ -1,9 +1,8 @@
 # MP3-Tag-Reader
 
-Overview
 MP3 Tag Reader is a simple and efficient tool designed to extract and display metadata from MP3 files. It reads ID3 tags to provide details such as Title, Artist, Album, Track Number, and more. This project is useful for individuals who want to view and manage MP3 tag data efficiently. Future enhancements could include tag editing capabilities to modify metadata.
 
-Understanding ID3 Tags
+
 ID3 tags allow metadata to be embedded within an MP3 file, helping organize and display song details in media players. The two main versions are:
 
 ID3v1 – A fixed 128-byte structure at the end of an MP3 file, identified by the "TAG" signature.
