@@ -1,19 +1,89 @@
-# MP3 Tag Reader  
+# 🎵 MP3 Tag Reader
 
-## Overview  
-MP3 Tag Reader is a simple and efficient tool designed to extract and display metadata from MP3 files. It reads **ID3 tags** to provide details such as **Title, Artist, Album, Track Number**, and more. This project is useful for individuals who want to **view and manage MP3 tag data** efficiently. Future enhancements could include **tag editing capabilities** to modify metadata.  
+## 📌 Overview  
+The **MP3 Tag Reader** is a lightweight and efficient tool built in **C** to extract and display metadata from MP3 files. It reads **ID3 tags** to present details such as **Title**, **Artist**, **Album**, and **Track Number**. Ideal for developers or music enthusiasts who want to **analyze or manage MP3 metadata**.
 
-## Understanding ID3 Tags  
-ID3 tags allow metadata to be embedded within an MP3 file, helping organize and display song details in media players. The two main versions are:  
-- **ID3v1** – A fixed 128-byte structure at the end of an MP3 file, identified by the "TAG" signature.  
-- **ID3v2** – A flexible and structured format typically found at the beginning of an MP3 file, supporting more metadata fields.  
+---
 
-## Key Features  
-✅ Supports **ID3v2.3** tag format. ✅ Detects and displays **ID3 version** used in the file. ✅ Extracts and presents **all available metadata fields**. ✅ Provides a **help menu (--help option)** for user guidance. ✅ Displays **error messages** if an ID3 tag is not found.  
+## 🧠 Understanding ID3 Tags  
 
-## Technical Details  
-- **ID3v1** uses **128 bytes** for metadata storage.  
-- **ID3v2** consists of a **header** and multiple **frames**, each holding a piece of metadata.  
-- The tool reads common ID3v2 fields such as: **TIT2 (Title), TALB (Album), TPE1 (Artist), TYER (Year).**
-  
+ID3 tags are metadata containers within MP3 files that help store song information. They are used by media players to show song details like title and artist.
 
+There are two main versions:
+
+- 🎧 **ID3v1**:  
+  - Fixed size (128 bytes)  
+  - Found at the **end** of the MP3 file  
+  - Identified by the `"TAG"` signature  
+
+- 🎧 **ID3v2**:  
+  - Located at the **beginning** of the MP3 file  
+  - Supports multiple metadata fields  
+  - Uses flexible frame-based storage  
+  - This project supports **ID3v2.3**  
+
+---
+
+## ⚙️ Key Features
+
+- ✅ Supports **ID3v2.3** tag format  
+- ✅ Automatically detects and displays **ID3 version**  
+- ✅ Extracts fields like **Title (TIT2), Album (TALB), Artist (TPE1), Year (TYER)**  
+- ✅ User guidance with `--help` option  
+- ✅ Shows **error messages** if no tag is present or format is unsupported  
+
+---
+
+## 🛠 Technical Details
+
+- **ID3v1**:  
+  - Last 128 bytes of the MP3 file  
+  - Simple structure for basic metadata  
+
+- **ID3v2**:  
+  - Starts with a 10-byte header  
+  - Followed by **frames**, each containing a specific tag field  
+  - Example frames:  
+    - `TIT2` → Title  
+    - `TALB` → Album  
+    - `TPE1` → Artist  
+    - `TYER` → Year  
+
+---
+
+## 📥 How to Compile
+
+```bash
+gcc mp3_tag_reader.c -o mp3tag
+```
+
+---
+
+## ▶️ How to Run
+
+```bash
+./mp3tag sample.mp3
+```
+
+Use `--help` for usage instructions:
+
+```bash
+./mp3tag --help
+```
+
+---
+
+## 🧪 Sample Output
+
+```
+MP3 Tag Reader - ID3 Metadata
+
+Title      : Bohemian Rhapsody
+Artist     : Queen
+Album      : A Night at the Opera
+Year       : 1975
+Track No.  : 01
+Genre      : Rock
+```
+
+---
